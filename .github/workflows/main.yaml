@@ -28,3 +28,13 @@ jobs:
     - uses: mymindstorm/setup-emsdk@v11
     - run: npm install terser -g
     - run: rake ci_build_wasm
+    
+  up_wasm:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: generated-files
+          path: ~/*
+
